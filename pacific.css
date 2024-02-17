@@ -145,6 +145,13 @@ footer {
   height: 300px; /* h300 */
 }
 
+#abouthero {
+  background-image: url(https://media.istockphoto.com/id/1293558382/photo/california-coast.jpg?s=612x612&w=0&k=20&c=Emc0J1VQMegdN98sIYSXQ4vLfxMeqk0MMEme70vc6kE=);
+  background-repeat: no-repeat;
+  background-size: 100% 100%; /* bgz100%100% */
+  height: 300px; /* h300 */
+}
+
 table {
   border-bottom: 1px solid #1976d2;
   border-collapse: separate;
@@ -188,16 +195,33 @@ video {
   margin: 1em;
 }
 
-#gallery {
+#gallery,
+#teampics {
   display: grid;
   gap: 2em;
 }
 
-#gallery img {
+#gallery img,
+#teampics img {
   box-shadow: 10px 10px 10px #777;
   text-align: center;
   width: 100%;
 }
+
+/* #story {
+  display: inline-block;
+  width: 55%;
+}
+
+.about img {
+  display: inline-block right;
+  box-shadow: 10px 10px 10px #777;
+  vertical-align: top;
+  text-align: center;
+  width: 40%;
+} */
+
+/* Need to fix the team pics when the screen gets smaller so that they're in between the texts? */
 
 @media (max-width: 600px) {
   header {
@@ -343,7 +367,8 @@ video {
         "nav footer"
         /180px 1fr;
     }
-    #gallery {
+    #gallery,
+    #teampics {
       grid-template-columns: repeat(3, 1fr);
     }
   }
