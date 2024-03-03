@@ -195,17 +195,40 @@ video {
   margin: 1em;
 }
 
-#gallery,
-#teampics {
+#galleryS {
   display: grid;
   gap: 2em;
 }
 
-#gallery img,
-#teampics img {
+#gallery img {
   box-shadow: 10px 10px 10px #777;
   text-align: center;
   width: 100%;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.column img {
+  box-shadow: 5px 5px 10px #777;
+}
+
+/* Some left and right padding inside the container */
+.container {
+  padding: 0 16px;
+  background-color: #fff;
+}
+
+/* Clear floats */
+.container::after,
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 /* #story {
@@ -313,6 +336,16 @@ video {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+  #portrait {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 730px) {
   video {
     display: block;
@@ -335,6 +368,7 @@ video {
     text-align: left;
     padding: 1em;
   }
+
   @supports (display: grid) {
     nav ul {
       flex-direction: column;
@@ -367,8 +401,7 @@ video {
         "nav footer"
         /180px 1fr;
     }
-    #gallery,
-    #teampics {
+    #gallery {
       grid-template-columns: repeat(3, 1fr);
     }
   }
